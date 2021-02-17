@@ -3,6 +3,11 @@ class myage extends Exception
     myage(String msg){
         super(msg);
     }
+
+    @Override
+    public Throwable fillInStackTrace() {
+        return this;
+    }
 }
 
 class testage{
@@ -28,6 +33,7 @@ public class question13 {
         catch (myage e)
         {
             System.out.println(e);
+            e.printStackTrace();
         }
     }
 }
